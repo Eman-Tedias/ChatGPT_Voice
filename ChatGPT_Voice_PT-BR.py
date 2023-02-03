@@ -30,7 +30,7 @@ def mic_result():
 
 def post_gpt(frase):
 
-    api_key = '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'
+    api_key = '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'
 
     headers = { "Authorization": "Bearer " + api_key }
 
@@ -50,7 +50,7 @@ def cria_audio2(audio):
 
     tts.save(file)
 
-    print("Estou aprendendo o que você disse...")
+    print("Estou pensando...")
 
     playsound(file)
 
@@ -62,7 +62,7 @@ def cria_audio(audio):
     tts.save(file)
     
     pygame.init()
-    print("Estou aprendendo o que você disse...")
+    print("Estou pensando...")
     pygame.mixer.music.load(file)
     pygame.mixer.music.play()
     
@@ -73,9 +73,17 @@ def cria_audio(audio):
     os.remove(file)
 
 def main():
-    frase = mic_result()
-    resultado_gpt = post_gpt(frase)
-    cria_audio(resultado_gpt)
+    context = ""
+    while True:
+        try:
+            frase = mic_result()
+            prompt = context + frase
+            resultado_gpt = post_gpt(prompt)
+            cria_audio(resultado_gpt)
+            context = resultado_gpt
+        except:
+            print('Tá certo, obrigado pelo papo!')
+            break
 
 if __name__ == '__main__':
     main()
