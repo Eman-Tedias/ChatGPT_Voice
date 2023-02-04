@@ -30,7 +30,7 @@ def mic_result():
 
 def post_gpt(frase):
 
-    api_key = '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'
+    api_key = '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'
 
     headers = { "Authorization": "Bearer " + api_key }
 
@@ -79,6 +79,10 @@ def main():
             frase = mic_result()
             prompt = context + frase
             resultado_gpt = post_gpt(prompt)
+            if resultado_gpt.startswith('!'):
+                resultado_gpt = resultado_gpt[1:]
+            elif resultado_gpt.startswith('?'):
+                resultado_gpt = resultado_gpt[1:]
             cria_audio(resultado_gpt)
             context = resultado_gpt
         except:
