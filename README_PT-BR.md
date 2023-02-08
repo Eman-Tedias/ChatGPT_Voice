@@ -1,4 +1,4 @@
-# ChatGPT_Voice_PT-BR
+# ChatGPT_Voice
 
 O projeto ChatGPT_Voice tem primeiramente o intuito de tornar a interação do usuário com o ChatGPT uma conversa natural e também atender usuários que tenham dificuldade para digitar no teclado ou que possuam alguma deficiência visual. O código utiliza a API do ChatGPT para obter as respostas geradas pelo microfone e então as informações são enviadas e transformadas pela biblioteca do Google Voice (gTTS) em áudio para o usuário. 
 
