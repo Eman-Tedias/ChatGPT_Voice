@@ -19,7 +19,7 @@ speech_recognition, gTTS, playsound, pygame, requests, os, random
 Versões utilizadas: SpeechRecognition: v3.9.0, gTTS: v2.3.1, playsound: v1.3.0, pygame: v2.1.2, requests: v2.27.1, os (built-in), random (built-in)
 Sistema operacional utilizado: Windows 10
 
-Para instalar cada biblioteca, copie e cole os seguintes comandos no seu prompt:
+Para instalar cada biblioteca, copie e cole os seguintes comandos no seu prompt de comando:
 
 speech_recognition: pip install SpeechRecognition
 gTTS: pip install gTTS
@@ -41,7 +41,7 @@ licença: https://github.com/Uberi/speech_recognition/blob/master/LICENSE.txt
 - gTTS:
 Autor: Pierre Nicolas Durette;
 Licença MIT;
-link: https://pypi.org/project/gTTS/;
+link: https://pypi.org/project/gTTS/
 licença: https://gtts.readthedocs.io/en/latest/license.html
 
 - playsound:
@@ -53,11 +53,11 @@ licença: https://github.com/TaylorSMarks/playsound/blob/master/LICENSE
 - pygame: 
 Autor: Pete Shinners; 
 Licença LGLP; 
-link: https://www.pygame.org/docs/; 
+link: https://www.pygame.org/docs/
 licença: https://www.pygame.org/docs/LGPL.txt
 
 - requests:
 Autor: Kenneth Reitz;
 Licença ASL;
-link: https://pypi.org/project/requests/;
+link: https://pypi.org/project/requests/
 licença: https://www.apache.org/licenses/LICENSE-2.0
