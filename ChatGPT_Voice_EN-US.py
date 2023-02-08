@@ -13,24 +13,24 @@ def mic_result():
     with sr.Microphone() as source:
 
         microfone.adjust_for_ambient_noise(source)
-        print("Diga alguma coisa: ")
+        print("Say something: ")
         audio = microfone.listen(source)
 
     try:
 
-        frase = microfone.recognize_google(audio,language='pt-BR')
+        frase = microfone.recognize_google(audio,language='en-US')
 
-        print("Você disse: " + frase)
+        print("You said: " + frase)
 
     except sr.UnkownValueError:
 
-        print("Não entendi")
+        print("I didn't understand")
 
     return frase
 
 def post_gpt(frase):
 
-    api_key = '' #Insira a chave dentro da string
+    api_key = '' #insert your API key inside the string
 
     headers = { "Authorization": "Bearer " + api_key }
 
@@ -44,25 +44,25 @@ def post_gpt(frase):
 
 def cria_audio2(audio):
 
-    tts = gTTS(audio,lang='pt-br')
+    tts = gTTS(audio,lang='en-us')
 
     file = str(random.randint(0, 9999)) + '.mp3'
 
     tts.save(file)
 
-    print("Estou pensando...")
+    print("I'm thinking...")
 
     playsound(file)
 
 def cria_audio(audio):
-    tts = gTTS(audio,lang='pt-br')
+    tts = gTTS(audio,lang='en-us')
     
     file = str(random.randint(0, 9999)) + '.mp3'
 
     tts.save(file)
     
     pygame.init()
-    print("Estou pensando...")
+    print("I'm thinking...")
     pygame.mixer.music.load(file)
     pygame.mixer.music.play()
     
@@ -86,7 +86,7 @@ def main():
             cria_audio(resultado_gpt)
             context = resultado_gpt
         except:
-            print('Tá certo, obrigado pelo papo!')
+            print('Ok, thanks for the chat!')
             break
 
 if __name__ == '__main__':
